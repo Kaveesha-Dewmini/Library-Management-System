@@ -1,0 +1,25 @@
+{
+  "name": "shelfwise-server",
+  "version": "1.0.0",
+  "description": "Backend API for Shelfwise Library Management System (MERN Stack + JavaScript)",
+  "type": "module",
+  "main": "src/index.js",
+  "scripts": {
+    "dev": "node --watch src/index.js",
+    "start": "node src/index.js",
+    "seed": "node src/seed.js"
+  },
+  "dependencies": {
+    "bcryptjs": "^3.0.2",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "helmet": "^8.0.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.10.1",
+    "morgan": "^1.10.0",
+    "node-cron": "^3.0.3",
+    "zod": "^3.24.2"
+  }
+}

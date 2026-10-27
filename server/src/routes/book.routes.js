@@ -1,0 +1,12 @@
+import { Router } from 'express';
+import { getBooks, getNewArrivals, getBookById, isbnLookup, createBook, updateBook, deleteBook } from '../controllers/book.controller.js';
+import { authenticate, authorize } from '../middleware/auth.js';
+const router = Router();
+router.get('/', authenticate, getBooks);
+router.get('/new-arrivals', authenticate, getNewArrivals);
+router.get('/isbn-lookup/:isbn', authenticate, authorize('admin', 'librarian'), isbnLookup);
+router.get('/:id', authenticate, getBookById);
+router.post('/', authenticate, authorize('admin', 'librarian'), createBook);
+router.patch('/:id', authenticate, authorize('admin', 'librarian'), updateBook);
+router.delete('/:id', authenticate, authorize('admin'), deleteBook);
+export default router;

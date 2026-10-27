@@ -1,0 +1,10 @@
+import { Router } from 'express';
+import { getPopularBooks, getActiveMembers, getOverdueReport, getFinesByMonth, exportCsv } from '../controllers/report.controller.js';
+import { authenticate, authorize } from '../middleware/auth.js';
+const router = Router();
+router.get('/popular-books', authenticate, authorize('admin', 'librarian'), getPopularBooks);
+router.get('/active-members', authenticate, authorize('admin', 'librarian'), getActiveMembers);
+router.get('/overdue', authenticate, authorize('admin', 'librarian'), getOverdueReport);
+router.get('/fines-by-month', authenticate, authorize('admin', 'librarian'), getFinesByMonth);
+router.get('/:name/export.csv', authenticate, authorize('admin', 'librarian'), exportCsv);
+export default router;

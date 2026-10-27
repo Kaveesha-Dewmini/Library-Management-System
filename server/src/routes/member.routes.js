@@ -1,0 +1,11 @@
+import { Router } from 'express';
+import { getMembers, getMemberById, checkEligibility, createMember, updateMember, deleteMember } from '../controllers/member.controller.js';
+import { authenticate, authorize } from '../middleware/auth.js';
+const router = Router();
+router.get('/', authenticate, authorize('admin', 'librarian'), getMembers);
+router.get('/:id', authenticate, authorize('admin', 'librarian'), getMemberById);
+router.get('/:id/eligibility', authenticate, authorize('admin', 'librarian'), checkEligibility);
+router.post('/', authenticate, authorize('admin', 'librarian'), createMember);
+router.patch('/:id', authenticate, authorize('admin', 'librarian'), updateMember);
+router.delete('/:id', authenticate, authorize('admin'), deleteMember);
+export default router;

@@ -1,0 +1,10 @@
+import { Router } from 'express';
+import { issueLoan, returnLoan, renewLoan, getLoans, getMyLoans } from '../controllers/circulation.controller.js';
+import { authenticate, authorize } from '../middleware/auth.js';
+const router = Router();
+router.get('/', authenticate, authorize('admin', 'librarian'), getLoans);
+router.get('/mine', authenticate, getMyLoans);
+router.post('/', authenticate, authorize('admin', 'librarian'), issueLoan);
+router.post('/:id/return', authenticate, authorize('admin', 'librarian'), returnLoan);
+router.post('/:id/renew', authenticate, renewLoan);
+export default router;

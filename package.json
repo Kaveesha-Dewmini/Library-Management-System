@@ -1,0 +1,21 @@
+{
+  "name": "shelfwise",
+  "version": "1.0.0",
+  "description": "Shelfwise - Modern Library Management System (MERN Stack + JavaScript)",
+  "private": true,
+  "workspaces": [
+    "server",
+    "client"
+  ],
+  "scripts": {
+    "setup": "npm install && npm run setup:env",
+    "setup:env": "node -e \"const fs=require('fs'); if(!fs.existsSync('./server/.env') && fs.existsSync('./server/.env.example')) { fs.copyFileSync('./server/.env.example', './server/.env'); console.log('Created server/.env'); }\"",
+    "dev": "concurrently -n \"SERVER,CLIENT\" -c \"blue,green\" \"npm run dev --workspace=server\" \"npm run dev --workspace=client\"",
+    "seed": "npm run seed --workspace=server",
+    "build": "npm run build --workspace=client",
+    "start": "npm run start --workspace=server"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}
