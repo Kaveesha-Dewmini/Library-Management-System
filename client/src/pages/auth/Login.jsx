@@ -49,7 +49,7 @@ export const Login = () => {
             Library Management System
           </div>
           <h1 className="font-serif text-3xl font-bold leading-snug mb-2">
-            “A Reader lives a thousand lives before he dies, said Jojen. The man who never reads lives only one.”
+            “A Reader lives thousand lives before he dies. The man who never reads lives only one.”
           </h1>
           <p className="text-[#E09F3E] font-serif italic text-sm mb-4">
             — George R.R. Martin
