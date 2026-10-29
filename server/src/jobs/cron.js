@@ -8,7 +8,7 @@ export async function processOverdueLoans() {
         const now = new Date();
         const result = await Loan.updateMany({ status: 'active', dueAt: { $lt: now } }, { $set: { status: 'overdue' } });
         if (result.modifiedCount > 0) {
-            console.log(`⏰ Cron: Updated ${result.modifiedCount} loans to "overdue" status.`);
+            console.log(` Cron: Updated ${result.modifiedCount} loans to "overdue" status.`);
         }
     }
     catch (err) {
@@ -39,12 +39,12 @@ export async function processExpiredReservations() {
                 nextPending.readyAt = now;
                 nextPending.expiresAt = expiresAt;
                 await nextPending.save();
-                console.log(`⏰ Cron: Promoted reservation ${nextPending._id} to ready.`);
+                console.log(` Cron: Promoted reservation ${nextPending._id} to ready.`);
             }
             else {
                 // Return copy to available pool
                 await Book.findByIdAndUpdate(res.book, { $inc: { availableCopies: 1 } });
-                console.log(`⏰ Cron: Returned held copy for book ${res.book} back to shelf.`);
+                console.log(` Cron: Returned held copy for book ${res.book} back to shelf.`);
             }
         }
     }
@@ -61,5 +61,5 @@ export function initScheduledJobs() {
         await processOverdueLoans();
         await processExpiredReservations();
     });
-    console.log('⏰ Scheduled jobs initialized (Overdue & Reservation Expiry).');
+    console.log(' Scheduled jobs initialized (Overdue & Reservation Expiry).');
 }
