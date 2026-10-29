@@ -41,7 +41,7 @@ export const Dashboard = () => {
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
           <h1 className="font-serif text-3xl font-bold text-[#1A2238]">
-            Good day, {user?.name}
+            Good day, {user?.name} !
           </h1>
           <p className="text-sm text-gray-500 mt-1 flex items-center gap-2">
             <Calendar className="w-4 h-4 text-gray-400"/>

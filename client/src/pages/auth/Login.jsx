@@ -35,7 +35,7 @@ export const Login = () => {
         setError('');
     };
     return (<div className="min-h-screen flex bg-[#FAF8F5]">
-      {/* Left Bookish Illustration Panel */}
+      {/* Left Illustration Panel */}
 <div className="hidden lg:flex lg:w-1/2 bg-slate-800 text-white p-12 flex-col justify-between relative overflow-hidden">
   
   {/* Top Brand Block - Subtitle moved here */}

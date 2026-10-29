@@ -40,7 +40,7 @@ export const Loans = () => {
         <div>
           <h1 className="font-serif text-3xl font-bold text-[#1A2238]">Loans Management</h1>
           <p className="text-sm text-gray-500 mt-1">
-            Track active loans, due dates, renewal counts, and return statuses
+            Track Active loans, Due dates, Renewal counts, and Return statuses
           </p>
         </div>
       </div>

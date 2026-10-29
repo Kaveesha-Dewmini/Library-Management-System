@@ -67,7 +67,7 @@ export const Catalogue = () => {
       <div>
         <h1 className="font-serif text-3xl font-bold text-[#1A2238]">Library Catalogue</h1>
         <p className="text-sm text-gray-500 mt-1">
-          Explore books, discover new arrivals, and place reservations for borrowed titles
+          Explore books, Discover New Arrivals, and Place Reservations for Borrowed Titles
         </p>
       </div>
 
