@@ -12,9 +12,9 @@ async function bootstrap() {
     app.listen(PORT, () => {
         console.log(`
 ====================================================
-📚  Shelfwise Server running on http://localhost:${PORT}
-⚡  Health Check:  http://localhost:${PORT}/api/v1/health
-🔐  Base API URL:  http://localhost:${PORT}/api/v1
+  Shelfwise Server running on http://localhost:${PORT}
+  Health Check:  http://localhost:${PORT}/api/v1/health
+  Base API URL:  http://localhost:${PORT}/api/v1
 ====================================================
     `);
     });

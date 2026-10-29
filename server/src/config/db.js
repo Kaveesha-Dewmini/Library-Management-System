@@ -4,11 +4,11 @@ export async function connectDB() {
     try {
         mongoose.set('strictQuery', false);
         await mongoose.connect(uri);
-        console.log(`✅ MongoDB connected: ${uri}`);
+        console.log(` MongoDB connected: ${uri}`);
     }
     catch (error) {
-        console.error('❌ MongoDB Connection Error:', error);
-        console.log('💡 Note: Ensure MongoDB is running locally (e.g., mongod or MongoDB Community Server), or provide a MONGODB_URI in server/.env');
+        console.error(' MongoDB Connection Error:', error);
+        console.log(' Note: Ensure MongoDB is running locally (e.g., mongod or MongoDB Community Server), or provide a MONGODB_URI in server/.env');
         // Don't kill process immediately in dev so app can log meaningful hints
     }
 }

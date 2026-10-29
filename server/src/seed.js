@@ -19,10 +19,10 @@ export async function seedDatabase(force = false) {
         }
         const existingUsers = await User.countDocuments();
         if (existingUsers > 0 && !force) {
-            console.log('🌱 Database already contains data. Skipping auto-seed.');
+            console.log(' Database already contains data. Skipping auto-seed.');
             return;
         }
-        console.log('🌱 Seeding database with realistic Shelfwise demo data...');
+        console.log(' Seeding database with realistic Shelfwise demo data...');
         // Clear existing collections
         await Promise.all([
             User.deleteMany({}),
@@ -472,16 +472,16 @@ export async function seedDatabase(force = false) {
                 createdAt: new Date(now.getTime() - 12 * 24 * 60 * 60 * 1000)
             }
         ]);
-        console.log('✅ Shelfwise seed complete!');
+        console.log(' Shelfwise seed complete!');
         console.log('----------------------------------------------------');
         console.log('Demo Accounts:');
-        console.log('🔑 Admin:     admin@shelfwise.test     / Admin@123');
-        console.log('🔑 Librarian: librarian@shelfwise.test / Librarian@123');
-        console.log('🔑 Member:    member@shelfwise.test    / Member@123');
+        console.log(' Admin:     admin@shelfwise.test     / Admin@123');
+        console.log(' Librarian: librarian@shelfwise.test / Librarian@123');
+        console.log(' Member:    member@shelfwise.test    / Member@123');
         console.log('----------------------------------------------------');
     }
     catch (error) {
-        console.error('❌ Error during seeding:', error);
+        console.error(' Error during seeding:', error);
     }
 }
 // If run directly via command line

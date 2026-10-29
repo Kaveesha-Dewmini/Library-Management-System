@@ -55,7 +55,7 @@ export const Login = () => {
             — George R.R. Martin
           </p>
           <p className="text-white/80 text-base leading-relaxed">
-            Welcome to Shelfwise Library
+            Welcome to Shelfwise Library!
           </p>
         </div>
 
@@ -72,7 +72,7 @@ export const Login = () => {
           <div className="text-center lg:text-left">
             <h2 className="font-serif text-3xl font-bold text-[#1A2238]">Welcome Back</h2>
             <p className="text-sm text-gray-500 mt-1">
-              Sign in to access your library account or management console
+              Sign in to access your library account
             </p>
           </div>
 

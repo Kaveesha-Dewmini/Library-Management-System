@@ -15,7 +15,7 @@
 -**Automated Fines:** Late return penalty calculation (LKR currency), fine thresholds that block checkout.
 -**Analytics & Reporting:** 30-day activity trends, most borrowed books, overdue audits, and one-click CSV data export.
 -**Crud Operations:** Book Management, Member Management, Circulation Desk, Reservations Queue, Fines Management, Categories works with CRUD operations. 
--Ex: create:Add Book,Register Members, add categories, Search books and Filter by category availability, Search or filter Members, Update any details,Delete categories which are not available, etc.
+-Ex: Create: Add Book,Register Members, add categories,Read: Search books and Filter by category availability, Search or filter Members,Update: Update any details,?Delete: Delete categories which are not available, etc.
 
 ---
 
