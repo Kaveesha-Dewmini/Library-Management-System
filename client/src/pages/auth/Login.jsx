@@ -36,28 +36,35 @@ export const Login = () => {
     };
     return (<div className="min-h-screen flex bg-[#FAF8F5]">
       {/* Left Bookish Illustration Panel */}
-      <div className="hidden lg:flex lg:w-1/2 bg-[#1E3A5F] text-white p-12 flex-col justify-between relative overflow-hidden">
-        <div className="z-10 flex items-center gap-3.5">
-          <div className="w-14 h-14 rounded-2xl bg-white/10 flex items-center justify-center">
-            <BookOpen className="w-8 h-8 text-[#E09F3E]"/>
-          </div>
-          <span className="font-serif font-bold text-5xl tracking-wide">Shelfwise</span>
-        </div>
+<div className="hidden lg:flex lg:w-1/2 bg-slate-800 text-white p-12 flex-col justify-between relative overflow-hidden">
+  
+  {/* Top Brand Block - Subtitle moved here */}
+  <div className="z-10 flex items-center gap-3.5">
+    <div className="w-14 h-14 rounded-2xl bg-white/10 flex items-center justify-center shrink-0">
+      <BookOpen className="w-8 h-8 text-[#E09F3E]"/>
+    </div>
+    <div className="flex flex-col">
+      <span className="font-serif font-bold text-5xl tracking-wide leading-none">
+        Shelfwise
+      </span>
+      <span className="text-[#E09F3E] text-base uppercase font-mono tracking-widest mt-1.5">
+        Library Management System
+      </span>
+    </div>
+  </div>
 
-        <div className="z-10 max-w-md">
-          <div className="text-[#E09F3E] text-sm uppercase font-mono tracking-widest mb-3">
-            Library Management System
-          </div>
-          <h1 className="font-serif text-3xl font-bold leading-snug mb-2">
-            “A Reader lives thousand lives before he dies. The man who never reads lives only one.”
-          </h1>
-          <p className="text-[#E09F3E] font-serif italic text-sm mb-4">
-            — George R.R. Martin
-          </p>
-          <p className="text-white/80 text-base leading-relaxed">
-            Welcome to Shelfwise Library!
-          </p>
-        </div>
+  {/* Quote Block - Subtitle removed from here */}
+  <div className="z-10 max-w-md">
+    <h1 className="font-serif text-3xl font-bold leading-snug mb-2">
+      “A Reader lives thousand lives before he dies. A man who never reads lives only one.”
+    </h1>
+    <p className="text-[#E09F3E] font-serif italic text-sm mb-4">
+      — George R.R. Martin
+    </p>
+    <p className="text-white/80 text-base leading-relaxed">
+      Welcome to Shelfwise Library!
+    </p>
+  </div>
 
         <div className="z-10"></div>
 
@@ -108,10 +115,10 @@ export const Login = () => {
             </button>
           </form>
 
-          {/* Demo Accounts Quick-Click Box */}
+          {/* Accounts Quick-Click Box */}
           <div className="p-4 bg-white rounded-2xl border border-gray-200 shadow-sm space-y-2.5">
             <div className="text-xs font-semibold text-gray-500 uppercase tracking-wider">
-              ⚡ Click to Fill:
+              Click to Fill:
             </div>
             <div className="grid grid-cols-3 gap-2 text-xs">
               <button type="button" onClick={() => fillDemo('admin@shelfwise.test', 'Admin@123')} className="p-2 text-center rounded-lg bg-blue-50 text-[#1E3A5F] font-medium hover:bg-blue-100 transition border border-blue-100">
