@@ -46,6 +46,11 @@ The system dynamically calculates overdue penalties upon book check-in without r
   * Live estimates for active overdue books are computed on-the-fly.
   * Fine rates and caps are dynamically fetched from the centralized MongoDB `Settings` collection.
 
+Values from Setting model (defaults):
+finePerDay = LKR 10
+maxFine = LKR 500
+fineLimit = LKR 200 (if unpaid fines exceed this, future borrowing is blocked)   
+
 ### 2. Reservation Queue Mechanism
 When all physical copies of a requested title are currently checked out, the system manages waitlist priorities transparently.
 * **Queue Placement:** Members can place a hold on out-of-stock items, joining an ordered, timestamp-based queue (e.g., position #1 in line).
