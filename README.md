@@ -50,13 +50,17 @@ The system dynamically calculates overdue penalties upon book check-in without r
 When all physical copies of a requested title are currently checked out, the system manages waitlist priorities transparently.
 * **Queue Placement:** Members can place a hold on out-of-stock items, joining an ordered, timestamp-based queue (e.g., position #1 in line).
 * **Automated Fulfillment:** When a borrowed book is returned to the circulation desk, the system automatically inspects pending reservations, locking and assigning the available copy to the earliest eligible patron in line.
+
 ---
-### 3. CRUD Operations Summary
+
+### CRUD Operations Summary
 * **CREATE (POST):** Adds new records (Ex: Registering members with auto-generated sequential IDs like `LIB-00001`, Adding books with metadata and cover images, Creating categories, Issuing new loans, and Placing book reservations).
 * **READ (GET):** Retrieves and filters data from MongoDB collections (Ex: Full-text search on books by title, author, or ISBN, Active overdue reports, and Member-specific views).
 * **UPDATE (PATCH/PUT):** Modifies existing records while enforcing business rules (Ex: Updating book or category details, Modifying member profiles, Toggling member status, Processing book returns, Renewing active loans, and Marking fines as paid or waived).
 * **DELETE (DELETE):** Removes or archives resources while preserving historical integrity (Ex: Soft-deleting books and member accounts, and Deleting unused categories with dependency checks).
+  
 ---
+
 ## Step-by-Step Setup & Run
 
 ### Prerequisites
