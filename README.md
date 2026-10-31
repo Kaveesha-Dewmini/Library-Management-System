@@ -36,7 +36,7 @@ The database comes pre-seeded with realistic demo accounts:
 
 
 ---
-## Workflow of Fines and Reserving Books 
+## Workflow , Fines and Reserving Books 
 
 ![Book Issue Workflow](./issue-book-workflow.png)
 
