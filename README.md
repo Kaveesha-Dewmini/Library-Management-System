@@ -37,6 +37,7 @@ The database comes pre-seeded with realistic demo accounts:
 
 ---
 ## Workflow , Fines and Reserving Books 
+## 1. Book Issue Workflow Diagram
 
 ![Book Issue Workflow](./issue-book-workflow.png)
 
@@ -55,7 +56,7 @@ finePerDay = LKR 10
 maxFine = LKR 500
 fineLimit = LKR 200 (if unpaid fines exceed this, future borrowing is blocked)   
 
-### 3. Reservation Queue Mechanism
+### 3. Reservation Queue Mechanism(FIFO)
 When all physical copies of a requested title are currently checked out, the system manages waitlist priorities transparently.
 * **Queue Placement:** Members can place a hold on out-of-stock items, joining an ordered, timestamp-based queue (e.g., position #1 in line).
 * **Automated Fulfillment:** When a borrowed book is returned to the circulation desk, the system automatically inspects pending reservations, locking and assigning the available copy to the earliest eligible patron in line.
