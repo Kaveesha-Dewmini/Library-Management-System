@@ -38,7 +38,11 @@ The database comes pre-seeded with realistic demo accounts:
 ---
 ## Workflow of Fines and Reserving Books 
 
-### 1. Fine Calculation 
+![Book Issue Workflow](./issue-book-workflow.png)
+
+---
+
+### 2. Fine Calculation 
 The system dynamically calculates overdue penalties upon book check-in without relying on hard-coded rules.
 * **Formula:** `Fine Amount = min(lateDays * finePerDay, maxFinePerLoan)`
 * **Behavior:** 
@@ -51,7 +55,7 @@ finePerDay = LKR 10
 maxFine = LKR 500
 fineLimit = LKR 200 (if unpaid fines exceed this, future borrowing is blocked)   
 
-### 2. Reservation Queue Mechanism
+### 3. Reservation Queue Mechanism
 When all physical copies of a requested title are currently checked out, the system manages waitlist priorities transparently.
 * **Queue Placement:** Members can place a hold on out-of-stock items, joining an ordered, timestamp-based queue (e.g., position #1 in line).
 * **Automated Fulfillment:** When a borrowed book is returned to the circulation desk, the system automatically inspects pending reservations, locking and assigning the available copy to the earliest eligible patron in line.
