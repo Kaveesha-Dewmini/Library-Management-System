@@ -1,7 +1,7 @@
 # Shelfwise — Modern Library Management System
 
 > **Web Application Development Mini Project**  
-> Built with the **MERN Stack + JavaScript** (MongoDB, Express.js, React.js with JSX, Node.js & Tailwind CSS).
+> Built with the **MERN Stack + JavaScript** ; (MongoDB, Express.js, React.js with JSX, Node.js & Tailwind CSS).
 
 ---
 
@@ -14,8 +14,7 @@
 -**Reservation Queues:** Automatic first-come first-served reservations.
 -**Automated Fines:** Late return penalty calculation (LKR currency), fine thresholds that block checkout.
 -**Analytics & Reporting:** 30-day activity trends, most borrowed books, overdue audits, and one-click CSV data export.
--**Crud Operations:** Book Management, Member Management, Circulation Desk, Reservations Queue, Fines Management, Categories works with CRUD operations. 
--Ex: Create: Add Book,Register Members, add categories,Read: Search books and Filter by category availability, Search or filter Members,Update: Update any details,?Delete: Delete categories which are not available, etc.
+
 
 ---
 
@@ -37,7 +36,27 @@ The database comes pre-seeded with realistic demo accounts:
 
 
 ---
+## Workflow of Fines and Reserving Books 
 
+### 1. Fine Calculation 
+The system dynamically calculates overdue penalties upon book check-in without relying on hard-coded rules.
+* **Formula:** `Fine Amount = min(lateDays * finePerDay, maxFinePerLoan)`
+* **Behavior:** 
+  * On-time returns (late days <= 0) generate no fine records.
+  * Live estimates for active overdue books are computed on-the-fly.
+  * Fine rates and caps are dynamically fetched from the centralized MongoDB `Settings` collection.
+
+### 2. Reservation Queue Mechanism
+When all physical copies of a requested title are currently checked out, the system manages waitlist priorities transparently.
+* **Queue Placement:** Members can place a hold on out-of-stock items, joining an ordered, timestamp-based queue (e.g., position #1 in line).
+* **Automated Fulfillment:** When a borrowed book is returned to the circulation desk, the system automatically inspects pending reservations, locking and assigning the available copy to the earliest eligible patron in line.
+---
+### 3. CRUD Operations Summary
+* **CREATE (POST):** Adds new records (Ex: Registering members with auto-generated sequential IDs like `LIB-00001`, Adding books with metadata and cover images, Creating categories, Issuing new loans, and Placing book reservations).
+* **READ (GET):** Retrieves and filters data from MongoDB collections (Ex: Full-text search on books by title, author, or ISBN, Active overdue reports, and Member-specific views).
+* **UPDATE (PATCH/PUT):** Modifies existing records while enforcing business rules (Ex: Updating book or category details, Modifying member profiles, Toggling member status, Processing book returns, Renewing active loans, and Marking fines as paid or waived).
+* **DELETE (DELETE):** Removes or archives resources while preserving historical integrity (Ex: Soft-deleting books and member accounts, and Deleting unused categories with dependency checks).
+---
 ## Step-by-Step Setup & Run
 
 ### Prerequisites
